@@ -1,0 +1,21 @@
+{
+  "name": "spiritex-exchange-bots",
+  "description": "SpiritEx Exchange Bot Platform",
+  "version": "0.2.7",
+  "keywords": [],
+  "author": "",
+  "public": false,
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "mocha": "^10.4.0"
+  },
+  "dependencies": {
+    "@spiritex/exchange-client": "^0.2.7",
+    "isolated-vm": "^5.0.3",
+    "sequelize": "^6.37.5",
+    "sqlite3": "^5.1.7"
+  }
+}
