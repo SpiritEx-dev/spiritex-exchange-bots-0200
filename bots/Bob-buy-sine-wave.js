@@ -2,8 +2,8 @@
 
 const ASSERT = require( 'assert' );
 
-const SERIES = require( '../src/Stats' );
 const BOT = require( '../src/Bot' );
+const STATS = require( '../src/Stats' );
 const Config = require( './~Bob-Test.config' );
 
 
@@ -36,9 +36,10 @@ async function bot_move( Bot, Config )
 	var price = Config.base_asset_price_cents;
 	if ( prices.length > 5 )
 	{
-		price = SERIES.Average( prices, 3 );
-		var std_dev = SERIES.StandardDeviation( prices );
-		price = price + ( 100 * Math.sin( sin_value ) );
+		price = STATS.Calculators.Average( 3 )( prices );
+		var std_dev = STATS.Calculators.StdDev( 5 )( prices );
+		var dev = STATS.Generators.Random( -std_dev, std_dev )();
+		price = price + ( 100 * Math.sin( sin_value ) ) + dev;
 	}
 	else
 	{

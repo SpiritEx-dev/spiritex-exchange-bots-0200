@@ -5,6 +5,20 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "Admin",
+			"type": "node",
+			"request": "launch",
+			"skipFiles": [
+				"<node_internals>/**",
+				"${workspaceFolder}/node_modules/**"
+			],
+			"cwd": "${workspaceFolder}",
+			"program": "${workspaceFolder}/bots/Admin.js",
+			"args": [],
+			"outputCapture": "std",
+			"internalConsoleOptions": "openOnSessionStart",
+		},
+		{
 			"name": "Alice sell sine wave",
 			"type": "node",
 			"request": "launch",

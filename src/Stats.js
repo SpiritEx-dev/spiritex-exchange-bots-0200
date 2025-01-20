@@ -241,7 +241,7 @@ function StdDev_Calculator( Length )
 		if ( sum === null ) { return null; }
 		var mean = ( sum / Length );
 		var squared_differences = [];
-		for ( ndx = 0; ndx < Length; ndx++ )
+		for ( var ndx = 0; ndx < Length; ndx++ )
 		{
 			var value = Data[ Index + ndx ];
 			if ( value === null ) { return null; }
