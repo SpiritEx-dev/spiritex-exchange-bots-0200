@@ -1,8 +1,9 @@
 'use strict';
 
+const PATH = require( 'path' );
+
 const BOT = require( '../src/Bot' );
 const STATS = require( '../src/Stats' );
-const Config = require( './~Alice-Test.config' );
 
 
 //---------------------------------------------------------------------
@@ -71,5 +72,8 @@ async function bot_move( Bot, Config )
 
 
 //---------------------------------------------------------------------
-BOT( Config, bot_move ).Run();
+if ( process.argv.length <= 2 ) { throw new Error( `Missing command line parameters.` ); }
+var config_path = PATH.resolve( process.argv[ 2 ] );
+var BotConfig = require( config_path );
+BOT( BotConfig, bot_move ).Run();
 

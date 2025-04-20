@@ -34,9 +34,10 @@ module.exports = function ( Config, BotMove )
 			//  - Create the account, if it doesn't exist.
 			if ( !account )
 			{
-				console.log( `Creating account ${Config.account_name}.` );
-				account = await Bot.ExchangeClient.Accounts.Create();
-				account = await Bot.ExchangeClient.Accounts.Rename( account.account_id, Config.account_name );
+				throw new Error( `The account [${Config.account_name}] does not exist.` );
+				// console.log( `Creating account ${Config.account_name}.` );
+				// account = await Bot.ExchangeClient.Accounts.Create();
+				// account = await Bot.ExchangeClient.Accounts.Rename( account.account_id, Config.account_name );
 			}
 			Bot.AccountID = account.account_id;
 			console.log( `Using account ${account.account_name}.` );

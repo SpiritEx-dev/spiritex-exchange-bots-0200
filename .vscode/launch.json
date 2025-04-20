@@ -19,7 +19,7 @@
 			"internalConsoleOptions": "openOnSessionStart",
 		},
 		{
-			"name": "Alice sell sine wave",
+			"name": "Alice | Glenlivet-12-Year-Old",
 			"type": "node",
 			"request": "launch",
 			"skipFiles": [
@@ -28,7 +28,9 @@
 			],
 			"cwd": "${workspaceFolder}",
 			"program": "${workspaceFolder}/bots/Alice-sell-sine-wave.js",
-			"args": [],
+			"args": [
+				"${workspaceFolder}/~configs/Alice.Glenlivet-12-Year-Old.js",
+			],
 			"outputCapture": "std",
 			"internalConsoleOptions": "openOnSessionStart",
 		},
